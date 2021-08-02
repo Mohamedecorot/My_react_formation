@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>composant</title>
+    <title>Utilisation des props dans les component</title>
 </head>
 <body>
     <div id="root"></div>
@@ -15,25 +15,29 @@
 
     <script type="text/babel">
         const root = document.getElementById('root');
+
         //let h1 = React.createElement('h1', {children: "salut les gens"});
         //ReactDOM.render(h1, root);
 
-        const MyComponent = function () {
+        const MyComponent = function ({titre}) {
             return (
                 <section>
-                    <h1>{title}</h1>
+                    <h1>{titre}</h1>
                 </section>
             )
         };
 
-        const title = "Coucou les amis";
-        const template = (
-            <main>
-                <MyComponent />
-            </main>
-        );
+        function Template () {
+            const title = "Coucou les amis";
 
-        ReactDOM.render(template, root);
+            return (
+                <main>
+                    <MyComponent titre={title} />
+                </main>
+            )
+        }
+
+        ReactDOM.render(<Template />, root);
     </script>
 </body>
 </html>
