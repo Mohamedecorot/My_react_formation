@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Props - JSX (babel)</title>
+    <title>composant</title>
 </head>
 <body>
     <div id="root"></div>
@@ -18,11 +18,18 @@
         //let h1 = React.createElement('h1', {children: "salut les gens"});
         //ReactDOM.render(h1, root);
 
+        const MyComponent = function () {
+            return (
+                <section>
+                    <h1>{title}</h1>
+                </section>
+            )
+        };
+
+        const title = "Coucou les amis";
         const template = (
             <main>
-                <section>
-                    <h1>Coucou les amis</h1>
-                </section>
+                <MyComponent />
             </main>
         );
 
