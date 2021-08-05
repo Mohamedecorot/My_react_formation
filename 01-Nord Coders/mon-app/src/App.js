@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import Picture from './components/Picture';
 
 function App(){
-    //hook
+    //hook d'état
     const [title, setTitle] = useState('coucou les amis');
     const [show, setShow] = useState(false);
 
+    // Hook d’effet
+    useEffect(() => console.log('composant app monté'), []);
     function handleClick() {
         setShow(!show);
     }
