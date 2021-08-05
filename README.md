@@ -15,6 +15,9 @@
     4. Lancer son projet React
             -> npm start pour lancer le projet, puis se rendre sur localhost:3000
 
+# Pour récuperer les fichiers node module ignorer :
+    npm i (ou npm install)
+
 # Liens utiles :
 
     https://www.commentcoder.com/apprendre-a-coder-gratuitement/
@@ -23,6 +26,7 @@
     https://fr.reactjs.org/ et https://fr.reactjs.org/tutorial/tutorial.html
     https://www.freecodecamp.org/learn/front-end-libraries/#react
     https://grafikart.fr/tutoriels/react ou https://www.youtube.com/watch?v=SMgQlTSoXf0&list=PLjwdMgw5TTLWom67YfZuha-1iYzIirwJR
+    https://www.youtube.com/watch?v=zNEck1k3_zY&list=PLeeuvNW2FHVjVHC8LTbqAvGe9I23sl0Bj
     https://www.youtube.com/watch?v=K3D2rjAUQ3o
 
     https://www.commentcoder.com/apprendre-react/#react-js-avanc%C3%A9
