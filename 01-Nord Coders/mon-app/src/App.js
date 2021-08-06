@@ -1,13 +1,22 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Picture from './components/Picture';
 
 function App(){
     //hook d'état
     const [title, setTitle] = useState('coucou les amis');
     const [show, setShow] = useState(false);
+    const isShowInitialize = useRef(false);
 
     // Hook d’effet
     useEffect(() => console.log('composant app monté'), []);
+    useEffect(() => {
+        if (isShowInitialize.current) {
+            console.log('show mis à jour');
+        } else {
+            isShowInitialize.current = true;
+        }
+    }, [show]);
+
     function handleClick() {
         setShow(!show);
     }
