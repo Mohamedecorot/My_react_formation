@@ -14,9 +14,16 @@ export default function Picture() {
     const [image, setImage] = useState(null);
 
     function ImagesComponent() {
-        return images.map((name) => {
+        return images.map((name, index) => {
             return (
-                <img className="w-40 mx-auto" src={name} alt="" />
+                <div className="relative" key={index}>
+                    <button
+                        className="bg-white w-5 h-5 pb-1 font-thin rounded-xl text-center flex justify-center items-center absolute text-red-500 right-0 text-sm focus:outline-none"
+                        onClick={() => setImages(images.filter((image, i) => i !== index))}
+                        >x
+                    </button>
+                    <img className="w-40 mx-auto" src={name} alt="" />
+                </div>
             )
         })
     }
@@ -26,15 +33,9 @@ export default function Picture() {
     }
 
     function addImageName() {
-        console.log('coucou')
         let newImages = [image, ...images];
         setImages(newImages);
     }
-
-    // function addImageName() {
-    //     let newImages = [... images. image];
-    //     setImage(newImages);
-    // }
 
     useEffect(() => {
         const myTimer = setInterval(() => {
