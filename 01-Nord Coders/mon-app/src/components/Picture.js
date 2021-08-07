@@ -12,13 +12,17 @@ export default function Picture() {
     ]);
 
     const [image, setImage] = useState(null);
+    const [showCloseButton, setshowCloseButton] = useState(-1);
 
     function ImagesComponent() {
         return images.map((name, index) => {
             return (
-                <div className="relative" key={index}>
+                <div className="relative" key={index}
+                    onMouseEnter={() => setshowCloseButton(index)}
+                    onMouseLeave={() => setshowCloseButton(-1)}
+                >
                     <button
-                        className="bg-white w-5 h-5 pb-1 font-thin rounded-xl text-center flex justify-center items-center absolute text-red-500 right-0 text-sm focus:outline-none"
+                        className={`bg-white w-5 h-5 pb-1 font-thin rounded-xl text-center flex justify-center items-center absolute text-red-500 right-0 text-sm focus:outline-none ${index === showCloseButton ? '' : 'hidden'}`}
                         onClick={() => setImages(images.filter((image, i) => i !== index))}
                         >x
                     </button>
