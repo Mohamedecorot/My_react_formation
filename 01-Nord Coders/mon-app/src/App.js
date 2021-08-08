@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Picture from './components/Picture';
+import Picture from './components/Pictures';
 
 function App(){
     //hook d'état
