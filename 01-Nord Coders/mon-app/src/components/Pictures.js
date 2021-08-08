@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component, useState, useEffect, useRef } from 'react'
 import Picture from './Picture';
 // import Picture from '/Picture'
 
@@ -19,6 +19,7 @@ export default function Pictures() {
         return images.map((name, index) => <Picture
         imageName = {name}
         index = {index}
+        key = {index}
         handleRemove = {handleRemoveImage}
         />)
     }
@@ -36,12 +37,22 @@ export default function Pictures() {
         setImages(newImages);
     }
 
-    useEffect(() => {
-        const myTimer = setInterval(() => {
-            console.log('timer appelé');
-        }, 1000);
-        return () => clearInterval(myTimer);
-    }, []);
+    // useEffect(() => {
+    //     const myTimer = setInterval(() => {
+    //         console.log('timer appelé');
+    //     }, 1000);
+    //     return () => clearInterval(myTimer);
+    // }, []);
+
+    // const inputToFocus = useRef(null);
+
+    // useEffect(() => {
+    //     inputToFocus.current.focus();
+    // });
+
+    const fruitRef = useRef(null);
+    const [fruitState, setFruitState] = useState(null);
+
     return (
         <div className="container mx-auto">
             <div className="flex items-center justify-between">
@@ -51,6 +62,12 @@ export default function Pictures() {
                 <input type="text" className="border border-gray-600 shadow rounded p-3 mr-2 outline-none" onChange={handleImageName}/>
                 <button type="submit" className="bg-purple-400 text-white rounded p-3" onClick={addImageName}>Inscrire le nom d'une image</button>
             </div>
+            <button onClick={() => {
+                setFruitState('orange');
+                fruitRef.current = 'pomme';
+            }}>Cliquez ici pour générer un fruit</button>
+            <div>{fruitState}</div>
+            <div>{fruitRef.current}</div>
         </div>
     )
 }
