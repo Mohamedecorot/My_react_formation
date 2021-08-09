@@ -14,6 +14,8 @@
             -> npx create-react-app <NOM_DU_PROJET>
     4. Lancer son projet React
             -> npm start pour lancer le projet, puis se rendre sur localhost:3000
+    5. Librairie intéressante selon le projet
+	    -> npm i -s react-router-dom react-dom node-sass@4.14.1
 
 # Pour récuperer les fichiers node module ignorer :
     npm i (ou npm install)
