@@ -8,6 +8,8 @@ const News = () => {
     const [newsData, setNewsData] = useState([]);
     const [author, setAuthor] = useState("");
     const [content, setContent] = useState("");
+    const [error, setError] = useState(false);
+    const [error2, setError2] = useState(false);
 
     useEffect(() => {
         getData();
@@ -21,17 +23,29 @@ const News = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios
-        .post("http://localhost:3003/articles", {
-            author,
-            content,
-            date: Date.now(),
-        })
-        .then(() => {
-            setAuthor("");
-            setContent("");
-            getData();
-        });
+        if (author.length < 3)
+            setError(true);
+        else
+            setError(false);
+        if (content.length < 140)
+            setError2(true);
+        else
+            setError2(false);
+        if (author.length > 3 && content.length > 140) {
+            axios
+            .post("http://localhost:3003/articles", {
+                author,
+                content,
+                date: Date.now(),
+            })
+            .then(() => {
+                setError(false);
+                setError2(false);
+                setAuthor("");
+                setContent("");
+                getData();
+            });
+        }
     };
 
     return (
@@ -41,8 +55,10 @@ const News = () => {
             <h1>News</h1>
 
             <form onSubmit={(e) => handleSubmit(e)}>
-                <input type="text" onChange={(e) => setAuthor(e.target.value)} placeholder="Nom" value={author}/>
-                <textarea onChange={(e) => setContent(e.target.value)} placeholder="Message" value={content}></textarea>
+                <input type="text" style={{ border: error ? "1px solid red" : "1px solid #61dafb" }} onChange={(e) => setAuthor(e.target.value)} placeholder="Nom" value={author}/>
+                {error && <p>Veuillez écrire un minimum de 3 caractères</p>}
+                <textarea style={{ border: error2 ? "1px solid red" : "1px solid #61dafb" }} onChange={(e) => setContent(e.target.value)} placeholder="Message" value={content}></textarea>
+                {error2 && <p>Veuillez écrire un minimum de 140 caractères</p>}
                 <input type="submit" value="Envoyer" />
             </form>
             <ul>
