@@ -36,4 +36,6 @@
     https://www.youtube.com/watch?v=K3D2rjAUQ3o
     https://www.youtube.com/watch?v=hh4jRVGrLhc&t=3s
 
+    https://www.youtube.com/watch?v=LelifxOrzvw
+
     https://www.commentcoder.com/apprendre-react/#react-js-avanc%C3%A9
