@@ -1,16 +1,56 @@
 import React from 'react';
 import ButtonsBottom from '../components/ButtonsBottom';
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import Mouse from '../components/Mouse';
+import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
+import SocialNetwork from '../components/SocialNetwork';
 
 const Contact = () => {
   return (
-    <div>
+    <main>
       <Mouse/>
-      <Navigation/>
-      contact
-      <ButtonsBottom left={"/projet-4"} />
-    </div>
+      <div className="contact">
+        <Navigation />
+        <Logo />
+        {/* contact form */}
+        <div className="contact-infos">
+          <div className="address">
+            <div className="content">
+              <h4>adresse</h4>
+              <p>12 rue du Code</p>
+              <p>13013 Marseille</p>
+            </div>
+          </div>
+          <div className="phone">
+            <div className="content">
+              <h4>téléphone</h4>
+              <CopyToClipboard text="0642844284" className="hover">
+                <p style={{cursor: 'pointer'}} className="clipboard" onClick={() => { alert("Téléphone copié !");}}>
+                  06 42 84 42 84
+                </p>
+              </CopyToClipboard>
+            </div>
+          </div>
+          <div className="email">
+            <div className="content">
+              <h4>email</h4>
+              <CopyToClipboard text="fsagency@gmail.com" className="hover">
+                <p style={{cursor: 'pointer'}} className="clipboard" onClick={() => { alert("Email copié !"); }}>
+                  fsagency@gmail.com
+                </p>
+              </CopyToClipboard>
+            </div>
+          </div>
+          <SocialNetwork/>
+          <div className="credits">
+            <p>fromScratch - 2020</p>
+          </div>
+        </div>
+        <ButtonsBottom left={"/projet-4"} />
+      </div>
+
+    </main>
   );
 };
 

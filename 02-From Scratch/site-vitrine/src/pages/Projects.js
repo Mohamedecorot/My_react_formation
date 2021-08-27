@@ -36,7 +36,7 @@ export const Project2 = () => {
 export const Project3 = () => {
   return (
     <main>
-      <Mouse/>>
+      <Mouse/>
       <div className="project">
         <Navigation/>
         <Logo/>
