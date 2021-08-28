@@ -5,6 +5,7 @@ import Mouse from '../components/Mouse';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 import SocialNetwork from '../components/SocialNetwork';
+import ContactForm from '../components/ContactForm';
 
 const Contact = () => {
   return (
@@ -13,7 +14,7 @@ const Contact = () => {
       <div className="contact">
         <Navigation />
         <Logo />
-        {/* contact form */}
+        <ContactForm/>
         <div className="contact-infos">
           <div className="address">
             <div className="content">
