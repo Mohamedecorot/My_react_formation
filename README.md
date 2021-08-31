@@ -41,3 +41,5 @@
     https://openclassrooms.com/en/courses/5511091-organisez-votre-application-avec-la-logique-redux
 
     https://www.commentcoder.com/apprendre-react/#react-js-avanc%C3%A9
+
+    https://www.youtube.com/c/Hardcoders/playlists
