@@ -49,3 +49,13 @@ CRA s'exécute avec l’aide d’un gestionnaire de paquet (dans ce cours, yarn)
 
 Webpack permet d'importer simplement les fichiers entre eux.
 
+# 4. Incorporez du style et des assets à votre projet
+
+L'attribut className permet de préciser une classe à un élément React pour lui indiquer du CSS.
+
+Le fichier CSS correspondant peut être importé directement dans un fichier  .js.
+
+L'attribut  style   permet d'intégrer du style directement, on appelle cela du inline style.
+
+Les images sont importées par React grâce à Webpack. Il suffit d'importer l'image souhaitée.
+
