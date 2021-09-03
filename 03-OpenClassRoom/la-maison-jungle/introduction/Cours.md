@@ -49,13 +49,38 @@ CRA s'exécute avec l’aide d’un gestionnaire de paquet (dans ce cours, yarn)
 
 Webpack permet d'importer simplement les fichiers entre eux.
 
-# 4. Incorporez du style et des assets à votre projet
+# 5. Gagnez en temps et en efficacité grâce aux listes et aux conditions
 
-L'attribut className permet de préciser une classe à un élément React pour lui indiquer du CSS.
+À partir d’une liste de données,  map()   permet de créer une liste de composants React.
 
-Le fichier CSS correspondant peut être importé directement dans un fichier  .js.
+La prop  key   est indispensable dans les listes de composants.
 
-L'attribut  style   permet d'intégrer du style directement, on appelle cela du inline style.
+Si vous voulez éviter les bugs, la prop  key   doit : 
 
-Les images sont importées par React grâce à Webpack. Il suffit d'importer l'image souhaitée.
+être unique au sein de la liste ;
 
+perdurer dans le temps.
+
+La best practice pour créer une  key   est d’utiliser l’ id   unique associée à une donnée, et de ne pas vous contenter d'utiliser l'index de l'élément dans la liste.
+
+Une condition ternaire permet d’afficher un élément ou un autre dans le JSX, répondant à la condition "if… else...".
+
+Il existe d'autres manières de créer des conditions en React, notamment en sortant les conditions du JSX.
+
+# 6. Gagnez en temps et en efficacité grâce aux listes et aux conditions
+
+À partir d’une liste de données,  map()   permet de créer une liste de composants React.
+
+La prop  key   est indispensable dans les listes de composants.
+
+Si vous voulez éviter les bugs, la prop  key   doit : 
+
+être unique au sein de la liste ;
+
+perdurer dans le temps.
+
+La best practice pour créer une  key   est d’utiliser l’ id   unique associée à une donnée, et de ne pas vous contenter d'utiliser l'index de l'élément dans la liste.
+
+Une condition ternaire permet d’afficher un élément ou un autre dans le JSX, répondant à la condition "if… else...".
+
+Il existe d'autres manières de créer des conditions en React, notamment en sortant les conditions du JSX.
