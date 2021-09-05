@@ -108,3 +108,19 @@ La prop  children   est renseignée en imbriquant les enfants dans le parent : <
 
 children   est utile lorsqu'un composant ne connaît pas ses enfants à l'avance.
 
+# 8. Interagissez avec vos composants grâce aux événements
+
+En React, un événement s'écrit dans une balise en  camelCase, et on lui passe la fonction à appeler.
+
+Contrairement au JS, dans la quasi totalité des cas, vous n'avez pas besoin d'utiliser  addEventListener.
+
+React passe un événement synthétique en paramètre des fonctions de callBack. Cet événement synthétique est similaire à un événement passé en natif dans le DOM,  sauf qu'il est compatible avec tous les navigateurs.
+
+Il existe deux grandes manières de gérer les formulaires : les formulaires contrôlés ou non contrôlés. L'utilisation des formulaires contrôlés est recommandée.
+
+Les formulaires contrôlés sauvegardent la valeur des champs dans le state local, et accèdent à la data entrée par l'utilisateur avec  onChange.
+
+Les formulaires contrôlés permettent de filtrer le contenu, ou d'afficher un message d'erreur en fonction de la data qui est entrée par l'utilisateur.
+
+Sachez qu'il existe également des bibliothèques qui vous permettent de gérer les formulaires et leur validation aussi proprement que possible, par exemple le très bon outil react-hook-form.
+
