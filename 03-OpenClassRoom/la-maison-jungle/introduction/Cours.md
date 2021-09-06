@@ -124,3 +124,14 @@ Les formulaires contrôlés permettent de filtrer le contenu, ou d'afficher un m
 
 Sachez qu'il existe également des bibliothèques qui vous permettent de gérer les formulaires et leur validation aussi proprement que possible, par exemple le très bon outil react-hook-form.
 
+# 9. Mettez en place votre state local avec useState
+
+Le state local est présent à l’intérieur d’un composant : ce composant peut être re-render autant de fois que l'on veut, mais les données seront préservées.
+
+Un hook est une fonction qui permet de « se brancher » (to hook up) sur des fonctionnalités React.
+
+useState   est un hook qui permet d’ajouter le state local React à des fonctions composants :
+
+Il nous renvoie une paire de valeurs dans un tableau de 2 valeurs, récupérée dans les variables entre crochets.
+
+Il faut initialiser votre state avec un paramètre passé entre parenthèses – un nombre, une string, un booléen, un tableau ou même un objet.

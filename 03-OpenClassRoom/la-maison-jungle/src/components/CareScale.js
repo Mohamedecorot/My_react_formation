@@ -9,35 +9,6 @@ const quantityLabel = {
 	3: 'beaucoup'
 }
 
-// autre manière
-// function handleAlert(scaleValue, careType) {
-// 	if (careType === 'light') {
-// 		if (scaleValue === 1)
-// 			alert("Cette plante requiert peu de lumière");
-// 		else if (scaleValue === 2)
-// 			alert("Cette plante requiert modérement de lumière");
-// 		else
-// 			alert("Cette plante requiert beaucoup de lumière");
-// 	}
-// 	else {
-// 		if (scaleValue === 1)
-// 			alert("Cette plante requiert peu d'eau");
-// 		else if (scaleValue === 2)
-// 			alert("Cette plante requiert modérement d'eau");
-// 		else
-// 			alert("Cette plante requiert beaucoup d'eau");
-// 	}
-// }
-// return (
-// 	<div>
-// 		{range.map((rangeElem) =>
-// 			scaleValue >= rangeElem ? (
-// 				<span key={rangeElem.toString()} onClick={() => handleAlert(scaleValue, careType)}>{scaleType}</span>
-// 			) : null
-// 		)}
-// 	</div>
-// )
-
 function CareScale({ scaleValue, careType }) {
 	const range = [1, 2, 3]
 	const scaleType =
