@@ -135,3 +135,14 @@ useState   est un hook qui permet d’ajouter le state local React à des foncti
 Il nous renvoie une paire de valeurs dans un tableau de 2 valeurs, récupérée dans les variables entre crochets.
 
 Il faut initialiser votre state avec un paramètre passé entre parenthèses – un nombre, une string, un booléen, un tableau ou même un objet.
+
+# 10. Partagez votre state entre différents composants
+
+Pour utiliser un même état entre plusieurs composants, il faut :
+
+faire remonter l'état dans le composant parent commun le plus proche ;
+
+puis faire descendre la variable d'état et la fonction pour mettre à jour cet état dans des props.
+
+
+
