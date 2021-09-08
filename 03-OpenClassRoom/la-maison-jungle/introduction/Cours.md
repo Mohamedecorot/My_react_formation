@@ -145,4 +145,10 @@ faire remonter l'état dans le composant parent commun le plus proche ;
 puis faire descendre la variable d'état et la fonction pour mettre à jour cet état dans des props.
 
 
+# 11. Déclenchez des effets avec useEffect
 
+useEffectpermet d'effectuer des effets : cela permet à notre composant d'exécuter des actions après l'affichage, en choisissant à quel moment cette action doit être exécutée.
+
+Le hook  useEffect   est appelé après chaque rendu de votre composant. Il est possible de préciser quelle modification de donnée déclenche les effets exécutés dans useEffect, avec le tableau de dépendances.
+
+Un tableau de dépendances vide permet d'exécuter un effet uniquement au premier rendu de votre composant.
