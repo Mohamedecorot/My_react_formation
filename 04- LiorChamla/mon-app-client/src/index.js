@@ -11,14 +11,19 @@ class App extends React.Component {
     ]
   };
 
+  handleClick = () => {
+    console.log(this.state);
+  }
+
   render() {
   const title = "Liste des clients";
 
   return (
     <div>
       <h1>{title}</h1>
+      <button onClick={this.handleClick}>Click Me</button>
       <ul>
-        {this.state.clients.map(client => (<li>{client.nom} <button>X</button></li>))}
+        {this.state.clients.map(client => (<li key={client.id}>{client.nom} <button>X</button></li>))}
       </ul>
       <form>
         <input type="text" placeholder="Ajouter un client"/>
