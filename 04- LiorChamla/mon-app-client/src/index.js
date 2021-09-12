@@ -8,7 +8,8 @@ class App extends React.Component {
       {id: 1, nom: "Mohamed"},
       {id: 2, nom: "Maman"},
       {id: 3, nom: "Lior"},
-    ]
+    ],
+    nouveauClient: ''
   };
 
   // handleClick = () => {
@@ -25,6 +26,24 @@ class App extends React.Component {
     clients.splice(index, 1);
     this.setState({clients: clients});
   }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const id = new Date().getTime();
+    const nom = this.state.nouveauClient;
+    const client = {id: id, nom: nom};
+    const clients = this.state.clients.slice();
+
+    clients.push(client);
+    this.setState({clients: clients, nouveauClient: ''});
+  }
+
+  handleChange = (event) => {
+    const value = event.currentTarget.value;
+    this.setState({ nouveauClient: value})
+  }
+
   render() {
   const title = "Liste des clients";
 
@@ -34,8 +53,8 @@ class App extends React.Component {
       <ul>
         {this.state.clients.map(client => (<li key={client.id}>{client.nom} <button onClick={() => this.handleDelete(client.id)}>X</button></li>))}
       </ul>
-      <form>
-        <input type="text" placeholder="Ajouter un client"/>
+      <form onSubmit={this.handleSubmit}>
+        <input type="text" placeholder="Ajouter un client" value={this.state.nouveauClient} onChange={this.handleChange}/>
         <button>Confirmer</button>
       </form>
     </div>
