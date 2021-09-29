@@ -62,7 +62,8 @@ export const NavMenu = styled.ul`
     list-style: none;
     text-align: center;
     margin-right: -22px;
-    margin-top: 60px;
+    line-height: 500%;
+        ${'' /* margin-top: 60px; */}
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -80,6 +81,7 @@ export const NavLinks = styled(LinkS)`
     padding: 0 1rem;
     height: 100%;
     cursor: pointer;
+    margin-bottom: 0;
 
     &.active {
         border-bottom: 3px solid #01BF71;
