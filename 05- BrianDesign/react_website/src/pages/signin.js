@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import SignIn from '../components/SignIn'
 
 const SigninPage = () => {
     return (
-        <div>
-            <h1>Sign in page</h1>
-        </div>
+        <Fragment>
+            <SignIn/>
+        </Fragment>
     )
 }
 
