@@ -30,12 +30,15 @@ function TodoList() {
     }
 
     const completeTodo = id => {
-        let uptadeTodos = todos.map(todo => {
-            todo.isComplete = !todo.isComplete;
+        let uptadedTodos = todos.map(todo => {
+            if (todo.id === id) {
+                todo.isComplete = !todo.isComplete;
+            }
             return todo
-        })
-        setTodos(uptadeTodos);
-    }
+        });
+        setTodos(uptadedTodos);
+    };
+
     return (
         <div>
             <h1>Que voulez-vous faire aujourd'hui ?</h1>
