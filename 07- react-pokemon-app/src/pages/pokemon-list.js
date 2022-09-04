@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import POKEMONS from '../models/mock-pokemon';
+import { Link } from 'react-router-dom';
 import PokemonCard from '../components/pokemon-card';
+import PokemonService from '../services/pokemon-service';
 
 const PokemonList = () => {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
-    setPokemons(POKEMONS);
+    PokemonService.getPokemons().then(pokemons => setPokemons(pokemons));
   }, []);
 
   return (
@@ -18,6 +19,12 @@ const PokemonList = () => {
           <PokemonCard key={pokemon.id} pokemon={pokemon} />
         ))}
         </div>
+        <Link className='btn-floating btn-large waves-effect waves-light red z-depth-3'
+              style={{position: 'fixed', bottom: '25px', right: '25px' }}
+              to="/pokemon/add"
+        >
+          <i className="material-icons">add</i>
+        </Link>
       </div>
     </div>
   );
