@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Loader from '../components/loader';
 import formatDate from '../helpers/format-date';
 import formatType from '../helpers/format-type';
 import PokemonService from '../services/pokemon-service';
@@ -62,7 +63,7 @@ const Pokemondetail = ({ match }) => {
           </div>
         </div>
       ) : (
-        <h4 className="center">Aucun pokémon à afficher !</h4>
+        <h4 className="center"><Loader/></h4>
       )}
     </div>
   );

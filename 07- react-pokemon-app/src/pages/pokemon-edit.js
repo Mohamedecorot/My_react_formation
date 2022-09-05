@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Loader from "../components/loader";
 import PokemonForm from "../components/pokemon-form";
 import PokemonService from "../services/pokemon-service";
 
@@ -17,7 +18,7 @@ const PokemonEdit = ({ match }) => {
           <PokemonForm pokemon={pokemon} isEditForm={true}></PokemonForm>
         </div>
       ) : (
-        <h4 className="center">Aucun pokémon à afficher !</h4>
+        <h4 className="center"><Loader/></h4>
       )}
     </div>
   );
