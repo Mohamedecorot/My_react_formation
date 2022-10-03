@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { UidContext } from "../components/AppContext";
+import LeftNav from "../components/LeftNav";
+import Thread from "../components/Thread";
 
 const Home = () => {
+
   return (
-    <div>
-      home
+    <div className="home">
+      <LeftNav />
+      <div className="main">
+        <Thread />
+      </div>
     </div>
   );
 };
