@@ -17,11 +17,19 @@ class Counter extends Component {
         return <ul> { this.state.tags.map(tag => <li key={tag}>{tag}</li>)} </ul>
     }
 
+    // constructor() {
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
+    handleIncrement = () => {
+        this.setState({ count: this.state.count + 1 });
+    }
+
     render() {
         return (
         <>
             <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
-            <button style={{ fontSize: 16}} className="btn btn-secondary btn-sm">Increment</button>
+            <button onClick={this.handleIncrement} style={{ fontSize: 16}} className="btn btn-secondary btn-sm">Increment</button>
             { this.state.tags.length === 0 && "svp créer un nouveau tag"}
             { this.renderTags() }
             <img src={this.state.imageUrl} alt="" />
